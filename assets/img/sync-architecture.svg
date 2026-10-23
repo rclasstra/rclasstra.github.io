@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="Segoe UI, Roboto, Arial, sans-serif">
+  <defs>
+    <linearGradient id="syTitle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="syOff" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ecfdf5"/><stop offset="1" stop-color="#d1fae5"/></linearGradient>
+    <linearGradient id="syGate" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffbeb"/><stop offset="1" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="syCloud" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eff6ff"/><stop offset="1" stop-color="#dbeafe"/></linearGradient>
+    <filter id="sySh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.12"/></filter>
+    <marker id="syA" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#334155"/></marker>
+    <marker id="syUp" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#059669"/></marker>
+    <marker id="syDn" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <style>
+      .t{fill:#0f172a;font-weight:700}
+      .col{fill:#0f172a;font-weight:700;font-size:14.5px}
+      .lbl{fill:#0f172a;font-weight:600;font-size:12.8px}
+      .sub{fill:#475569;font-size:11px}
+      .badge{fill:#4f46e5;font-weight:800;font-size:13px}
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="620" fill="#ffffff"/>
+  <rect x="8" y="8" width="944" height="50" rx="12" fill="url(#syTitle)"/>
+  <text x="30" y="40" fill="#ffffff" font-weight="700" font-size="20">Offline-First Capture → Connectivity-Gated Sync → Central Store</text>
+
+  <!-- Column 1: Offline -->
+  <rect x="24" y="78" width="300" height="470" rx="16" fill="url(#syOff)" stroke="#10b981" stroke-width="1.6"/>
+  <circle cx="52" cy="108" r="15" fill="#059669"/><text x="52" y="113" text-anchor="middle" fill="#fff" font-weight="800" font-size="15">1</text>
+  <text x="76" y="106" class="col">Offline (always on)</text>
+  <text x="76" y="123" class="sub">the class never waits for the network</text>
+
+  <g filter="url(#sySh)">
+    <rect x="44" y="140" width="260" height="66" rx="10" fill="#fff" stroke="#a7f3d0"/>
+    <rect x="44" y="218" width="260" height="66" rx="10" fill="#fff" stroke="#a7f3d0"/>
+    <rect x="44" y="296" width="260" height="66" rx="10" fill="#fff" stroke="#a7f3d0"/>
+    <rect x="44" y="374" width="260" height="150" rx="10" fill="#fff" stroke="#a7f3d0"/>
+  </g>
+  <text x="174" y="165" text-anchor="middle" class="lbl">💾 Teacher laptop server</text>
+  <text x="174" y="184" text-anchor="middle" class="sub">writes JSON + media to local disk</text>
+  <text x="174" y="199" text-anchor="middle" class="sub">atomic writes · last-good backup</text>
+
+  <text x="174" y="243" text-anchor="middle" class="lbl">🔁 Every change → mirror</text>
+  <text x="174" y="262" text-anchor="middle" class="sub">debounced live folder mirror</text>
+  <text x="174" y="277" text-anchor="middle" class="sub">per class, on each edit</text>
+
+  <text x="174" y="321" text-anchor="middle" class="lbl">🗄 Local backup tiers</text>
+  <text x="174" y="340" text-anchor="middle" class="sub">Excel per quiz · portable ZIP</text>
+  <text x="174" y="355" text-anchor="middle" class="sub">USB bundle (data + uploads)</text>
+
+  <text x="174" y="399" text-anchor="middle" class="lbl">📤 Outbox queue (planned)</text>
+  <text x="174" y="419" text-anchor="middle" class="sub">append-only operation log</text>
+  <text x="174" y="436" text-anchor="middle" class="sub">each record: id + updatedAt + deviceId</text>
+  <text x="174" y="453" text-anchor="middle" class="sub">monotonic sequence number</text>
+  <text x="174" y="470" text-anchor="middle" class="sub">survives restart; nothing lost offline</text>
+  <text x="174" y="493" text-anchor="middle" class="sub" font-weight="700" fill="#047857">grades/attendance = append-only</text>
+  <text x="174" y="510" text-anchor="middle" class="sub" font-weight="700" fill="#047857">(never silently overwritten)</text>
+
+  <!-- Column 2: Gate -->
+  <rect x="360" y="238" width="200" height="150" rx="16" fill="url(#syGate)" stroke="#f59e0b" stroke-width="1.8" filter="url(#sySh)"/>
+  <circle cx="388" cy="266" r="15" fill="#d97706"/><text x="388" y="271" text-anchor="middle" fill="#fff" font-weight="800" font-size="15">2</text>
+  <text x="460" y="270" text-anchor="middle" class="col" fill="#92400e">Sync gate</text>
+  <text x="460" y="300" text-anchor="middle" class="sub" fill="#92400e" font-weight="700">Is the internet reachable?</text>
+  <text x="460" y="320" text-anchor="middle" class="sub" fill="#92400e">DNS/HTTP check — the SAME</text>
+  <text x="460" y="335" text-anchor="middle" class="sub" fill="#92400e">mechanism the Drive backup uses</text>
+  <text x="460" y="360" text-anchor="middle" class="sub" fill="#b45309" font-weight="700">NO → stay offline, silent no-op</text>
+  <text x="460" y="377" text-anchor="middle" class="sub" fill="#047857" font-weight="700">YES → push &amp; pull in background</text>
+
+  <!-- Column 3: Central -->
+  <rect x="596" y="78" width="340" height="470" rx="16" fill="url(#syCloud)" stroke="#3b82f6" stroke-width="1.6"/>
+  <circle cx="624" cy="108" r="15" fill="#2563eb"/><text x="624" y="113" text-anchor="middle" fill="#fff" font-weight="800" font-size="15">3</text>
+  <text x="648" y="106" class="col">Central store (when online)</text>
+  <text x="648" y="123" class="sub">merges changes from many devices</text>
+
+  <g filter="url(#sySh)">
+    <rect x="616" y="140" width="300" height="74" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+    <rect x="616" y="226" width="300" height="92" rx="10" fill="#fff" stroke="#bfdbfe"/>
+    <rect x="616" y="330" width="300" height="70" rx="10" fill="#fff" stroke="#bfdbfe"/>
+    <rect x="616" y="412" width="300" height="112" rx="10" fill="#fff" stroke="#bfdbfe"/>
+  </g>
+  <text x="766" y="164" text-anchor="middle" class="lbl">☁ Google Drive — works TODAY</text>
+  <text x="766" y="183" text-anchor="middle" class="sub">OAuth (drive.file) · per-class folder</text>
+  <text x="766" y="199" text-anchor="middle" class="sub" font-weight="700" fill="#b45309">encrypted tokens — already implemented</text>
+
+  <text x="766" y="250" text-anchor="middle" class="lbl">🖥 Central API + database (future)</text>
+  <text x="766" y="269" text-anchor="middle" class="sub">Node.js + Express · PostgreSQL / SQLite</text>
+  <text x="766" y="285" text-anchor="middle" class="sub">receives op-log, applies in order</text>
+  <text x="766" y="301" text-anchor="middle" class="sub">HTTPS (TLS) + bearer tokens</text>
+
+  <text x="766" y="356" text-anchor="middle" class="lbl">⚖ Conflict resolution</text>
+  <text x="766" y="375" text-anchor="middle" class="sub">editable fields: last-writer-wins (timestamp)</text>
+  <text x="766" y="391" text-anchor="middle" class="sub">grades/attendance: append-only + history</text>
+
+  <text x="766" y="437" text-anchor="middle" class="lbl">🔀 Cross-device merge</text>
+  <text x="766" y="456" text-anchor="middle" class="sub">teacher + student devices converge</text>
+  <text x="766" y="472" text-anchor="middle" class="sub">real conflicts logged for review, not dropped</text>
+  <text x="766" y="493" text-anchor="middle" class="sub">device registration &amp; revocation</text>
+  <text x="766" y="510" text-anchor="middle" class="sub" font-weight="700" fill="#1d4ed8">feeds dean/chairman oversight views</text>
+
+  <!-- flows -->
+  <line x1="304" y1="313" x2="360" y2="313" stroke="#334155" stroke-width="2.4" marker-end="url(#syA)"/>
+  <path d="M560 300 C 580 280, 592 250, 616 210" fill="none" stroke="#059669" stroke-width="2.4" marker-end="url(#syUp)"/>
+  <text x="566" y="250" fill="#059669" font-weight="700" font-size="11">push</text>
+  <path d="M616 360 C 592 372, 580 350, 560 340" fill="none" stroke="#2563eb" stroke-width="2.4" marker-end="url(#syDn)"/>
+  <text x="566" y="392" fill="#2563eb" font-weight="700" font-size="11">pull</text>
+
+  <!-- footer note -->
+  <rect x="24" y="560" width="912" height="48" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="40" y="580" class="sub" font-weight="700">Principle already proven end-to-end by the working Google Drive backup:</text>
+  <text x="40" y="597" class="sub">capture locally → push opportunistically when online → converge; the class is never blocked, and grades/attendance can never be erased by a stale device.</text>
+</svg>

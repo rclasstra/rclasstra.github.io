@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rClassTra — The offline-first classroom that runs on your own WiFi</title>
+  <meta name="description" content="rClassTra is an offline-first classroom platform. The teacher runs it on a laptop; students join from any device over the same WiFi. Live presentations, auto-graded quizzes, attendance, exam integrity, and analytics — no internet required." />
+  <meta property="og:title" content="rClassTra — Your classroom, on your own network" />
+  <meta property="og:description" content="Live presentations, quizzes, attendance, exam integrity and analytics — all over the local WiFi, with no internet needed." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script>
+    // Apply saved theme before first paint (no flash). Defaults to dark, like the app.
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') t = 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <img src="assets/img/logo.png" alt="rClassTra logo" />
+        rClassTra
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#problems">Why</a>
+        <a href="#features">Features</a>
+        <a href="#tour">Product tour</a>
+        <a href="#how">How it works</a>
+        <a href="#devices">Devices</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch between light and dark theme" title="Switch theme">
+          <span class="moon">🌙</span><span class="sun">☀️</span>
+        </button>
+        <a href="#get-started" class="btn btn-primary btn-sm">Request an app</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <a id="top"></a>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="reveal in">
+          <span class="eyebrow">⚡ Offline-first · LAN-based · built for real classrooms</span>
+          <h1>Your whole classroom, <span class="gradient-text">on your own WiFi.</span></h1>
+          <p class="lead">
+            rClassTra turns one laptop into the classroom server. Students join from any phone,
+            tablet, or laptop on the same network — live presentations, auto-graded quizzes,
+            attendance, exam integrity, and analytics. <strong>No internet required.</strong>
+          </p>
+          <div class="hero-actions">
+            <a href="#get-started" class="btn btn-primary">Request an app today →</a>
+            <a href="#tour" class="btn btn-ghost">See it in action</a>
+          </div>
+          <div class="hero-badges">
+            <div class="hb"><span class="dot"></span> Works with zero internet</div>
+            <div class="hb"><span class="dot"></span> Student data stays local</div>
+            <div class="hb"><span class="dot"></span> Set up in minutes</div>
+          </div>
+        </div>
+        <div class="reveal in" style="transition-delay:.1s">
+          <div class="hero-shot">
+            <img src="assets/shots/light-teacher-dashboard.png"
+                 data-light="assets/shots/light-teacher-dashboard.png"
+                 data-dark="assets/shots/teacher-dashboard.png"
+                 alt="rClassTra teacher dashboard showing presentation, screen share, and class tools" loading="eager" />
+            <span class="float-chip one">🟢 Connected · no internet</span>
+            <span class="float-chip two">⚡ 40–50 students on one WiFi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- trust strip -->
+      <div class="strip reveal">
+        <div class="wrap strip-grid">
+          <div><div class="n">0</div><div class="l">Internet connections needed</div></div>
+          <div><div class="n">1</div><div class="l">Laptop runs the whole class</div></div>
+          <div><div class="n">40–50</div><div class="l">Devices per classroom WiFi</div></div>
+          <div><div class="n">100%</div><div class="l">Student data kept on-site</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROBLEMS → SOLUTIONS ===================== -->
+  <section id="problems">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The problem we solve</span>
+        <h2>Real classroom problems — and how rClassTra fixes each one</h2>
+        <p>Low-connectivity classrooms face the same headaches every term. Here's what breaks today, and how one offline-first app puts it right.</p>
+      </div>
+
+      <div class="ps-list">
+
+        <!-- P1 -->
+        <div class="ps reveal">
+          <div class="ps-media"><img src="assets/img/stock/problem-classroom.jpg" alt="Crowded classroom relying on one screen" loading="lazy" /></div>
+          <div class="ps-body">
+            <span class="ps-tag problem">Problem</span>
+            <h3>No projector to teach or show your screen</h3>
+            <p>Some classrooms may not have a projector or TV. Without one, it's hard for the teacher to show slides or demonstrate on screen so the whole class can follow along.</p>
+            <div class="ps-sol">
+              <span class="ps-tag solution">rClassTra</span>
+              <p>No projector? No problem. The teacher pushes slides or shares their screen <strong>straight to every student's own phone, tablet, or laptop</strong> in real time. Everyone gets a front-row view of the lesson — no projector or extra hardware needed.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- P2 -->
+        <div class="ps reverse reveal">
+          <div class="ps-media"><img src="assets/img/stock/problem-paper-exam.jpg" alt="Students taking a paper-based exam" loading="lazy" /></div>
+          <div class="ps-body">
+            <span class="ps-tag problem">Problem</span>
+            <h3>Paper-based quizzes and exams eat time and paper</h3>
+            <p>Printing, distributing, collecting, and hand-grading stacks of paper is slow, costly, and error-prone.</p>
+            <div class="ps-sol">
+              <span class="ps-tag solution">rClassTra</span>
+              <p>Build a quiz once and publish it to the class. The engine <strong>auto-grades and returns scores instantly</strong>, with item analysis that shows which questions tripped students up.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- P3 -->
+        <div class="ps reveal">
+          <div class="ps-media"><img src="assets/img/stock/problem-cheating.jpg" alt="Student on a laptop during an online test" loading="lazy" /></div>
+          <div class="ps-body">
+            <span class="ps-tag problem">Problem</span>
+            <h3>Cheating with AI — and slow grading across many sections</h3>
+            <p>In online exams students lean on AI tools, search the web, switch tabs, or use a second screen. Paper exams are hard to police in a full room — and hand-grading quizzes for section after section eats days of a teacher's time.</p>
+            <div class="ps-sol">
+              <span class="ps-tag solution">rClassTra</span>
+              <p>Because exams run <strong>fully offline on the classroom WiFi, there's no internet — so students can't reach ChatGPT or any AI, and can't look anything up online.</strong> Built-in proctoring also enforces fullscreen, flags tab-switching and second monitors, and can record the camera, locking out rule-breakers until the teacher reviews it. And every quiz is <strong>auto-graded instantly</strong>, so running the same exam across many sections takes minutes, not days — see the screenshots below.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- P4 -->
+        <div class="ps reverse reveal">
+          <div class="ps-media"><img src="assets/img/stock/problem-no-internet.jpg" alt="Frustrated student struggling to keep up" loading="lazy" /></div>
+          <div class="ps-body">
+            <span class="ps-tag problem">Problem</span>
+            <h3>A dropped WiFi or brownout wipes out an exam</h3>
+            <p>Cloud tools stall the moment the connection drops. If the WiFi cuts out or the power browns out mid-quiz, students lose their answers and the whole exam has to restart.</p>
+            <div class="ps-sol">
+              <span class="ps-tag solution">rClassTra</span>
+              <p>Everything runs on the classroom WiFi with the teacher's laptop as the server — <strong>no internet is ever required.</strong> And if the WiFi drops or the power browns out during a quiz, <strong>answers keep saving on the student's device and sync back to the teacher automatically once the connection returns</strong> — so nobody loses their work.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- P5 -->
+        <div class="ps reveal">
+          <div class="ps-media"><img src="assets/img/stock/problem-grading.jpg" alt="Teacher managing a classroom and records" loading="lazy" /></div>
+          <div class="ps-body">
+            <span class="ps-tag problem">Problem</span>
+            <h3>Attendance &amp; records spread across separate files</h3>
+            <p>Manual attendance, grade sheets, and reports live in different places — and pulling them together for reviews is painful.</p>
+            <div class="ps-sol">
+              <span class="ps-tag solution">rClassTra</span>
+              <p>Students check in from their own device in seconds, grades flow in automatically, and you can <strong>export progress, attendance, and outcomes</strong> as CSV, Excel, or PDF for program reviews.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- P6 — at-risk / analytics -->
+        <div class="ps reverse reveal">
+          <div class="ps-media"><img src="assets/shots/light-teacher-analytics.png" alt="Analytics showing at-risk students and progress" loading="lazy" /></div>
+          <div class="ps-body">
+            <span class="ps-tag problem">Problem</span>
+            <h3>Struggling students slip through unnoticed</h3>
+            <p>By the time grades are tallied at the end of term, it's often too late to help the students who were quietly falling behind.</p>
+            <div class="ps-sol">
+              <span class="ps-tag solution">rClassTra</span>
+              <p>Every quiz feeds a built-in analytics view with per-student mastery and a <strong>machine-learning at-risk predictor</strong> that flags who's likely to fail their next quiz — and why — so teachers can step in early. It all runs offline on the teacher's laptop.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section id="features" class="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Everything a class needs</span>
+        <h2>One tool for teaching, testing, and tracking</h2>
+        <p>rClassTra replaces a pile of disconnected apps with a single platform your faculty can actually run — even when the internet is down.</p>
+      </div>
+      <div class="features">
+        <div class="card reveal"><div class="ico">🖥️</div><h3>Live presentations</h3><p>Push slides or share your screen live to every student device in the room, synced in real time over the local network.</p></div>
+        <div class="card reveal"><div class="ico">📝</div><h3>Quizzes &amp; auto-grading</h3><p>Build quizzes with multiple question types, publish them instantly, and let the engine grade and return scores automatically.</p></div>
+        <div class="card reveal"><div class="ico">✅</div><h3>Fast attendance</h3><p>Students check in from their own device in seconds. Attendance rolls straight into your class records and reports.</p></div>
+        <div class="card reveal"><div class="ico">📊</div><h3>Insightful analytics</h3><p>At-risk prediction, topic heatmaps, and item analysis turn quiz results into a clear picture of who needs help.</p></div>
+        <div class="card reveal"><div class="ico">🛡️</div><h3>Exam integrity</h3><p>Fullscreen enforcement, tab-switch alerts, second-monitor detection, and optional camera recording keep major exams honest.</p></div>
+        <div class="card reveal"><div class="ico">🌐</div><h3>Works online &amp; offline</h3><p>Run it on the classroom LAN with no internet, or adopt it school-wide so students can connect online from home too. Same platform, same records, either way.</p></div>
+        <div class="card reveal"><div class="ico">💾</div><h3>Local &amp; private</h3><p>Student records live on the school's own machine — never locked into a third-party cloud. Export, back up, or move data with one command, online or offline.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCT TOUR ===================== -->
+  <section id="tour">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Product tour</span>
+        <h2>Designed to be easy on day one</h2>
+        <p>A clean, modern interface your faculty will understand without training. Everything below is the real app.</p>
+      </div>
+
+      <div class="showcase">
+        <!-- Row 1 -->
+        <div class="row reveal">
+          <div class="row-text">
+            <span class="eyebrow">For teachers</span>
+            <h3>Run your class from one dashboard</h3>
+            <p>Start a presentation, open a class, or launch a quiz from a single screen. The connection status and classroom link are always one glance away.</p>
+            <ul>
+              <li>Present slides or share your screen live</li>
+              <li>One link everyone uses — students and staff</li>
+              <li>Works the moment the WiFi is up</li>
+            </ul>
+          </div>
+          <div class="frame">
+            <div class="frame-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">rclasstra.local/teacher</span></div>
+            <img src="assets/shots/light-teacher-dashboard.png" data-light="assets/shots/light-teacher-dashboard.png" data-dark="assets/shots/teacher-dashboard.png" alt="Teacher dashboard" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row reverse reveal">
+          <div class="row-text">
+            <span class="eyebrow">Classes &amp; rosters</span>
+            <h3>Every class, organized and color-coded</h3>
+            <p>Group students by class, share a join code, and jump straight to the roster, classwork, or attendance for each one.</p>
+            <ul>
+              <li>Per-class join codes students can use instantly</li>
+              <li>Live student and classwork counts at a glance</li>
+              <li>Import classes and rosters from a spreadsheet</li>
+            </ul>
+          </div>
+          <div class="frame">
+            <div class="frame-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">rclasstra.local/classes</span></div>
+            <img src="assets/shots/light-teacher-classes.png" data-light="assets/shots/light-teacher-classes.png" data-dark="assets/shots/teacher-classes.png" alt="My Classes view with color-coded class cards" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="row reveal">
+          <div class="row-text">
+            <span class="eyebrow">Reports &amp; exports</span>
+            <h3>Reports leadership can actually use</h3>
+            <p>Export student progress, attendance, item analysis, and topic coverage as CSV, Excel, or a printable PDF — ready for program reviews and accreditation.</p>
+            <ul>
+              <li>Student progress &amp; attendance records</li>
+              <li>Item analysis and topic coverage</li>
+              <li>One-click CSV, Excel, or PDF</li>
+            </ul>
+          </div>
+          <div class="frame">
+            <div class="frame-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">rclasstra.local/reports</span></div>
+            <img src="assets/shots/light-teacher-reports.png" data-light="assets/shots/light-teacher-reports.png" data-dark="assets/shots/teacher-reports.png" alt="Reports page with export options" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="row reverse reveal">
+          <div class="row-text">
+            <span class="eyebrow">Live monitoring</span>
+            <h3>See the room while class is running</h3>
+            <p>Keep an eye on who's connected and active in real time, so you always know the class is following along.</p>
+            <ul>
+              <li>Real-time presence of connected devices</li>
+              <li>Spot drop-offs during a lesson or exam</li>
+              <li>Everything stays inside your network</li>
+            </ul>
+          </div>
+          <div class="frame">
+            <div class="frame-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">rclasstra.local/monitoring</span></div>
+            <img src="assets/shots/light-teacher-monitoring.png" data-light="assets/shots/light-teacher-monitoring.png" data-dark="assets/shots/teacher-monitoring.png" alt="Live monitoring view" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Row 5 — Analytics / student progress -->
+        <div class="row reveal">
+          <div class="row-text">
+            <span class="eyebrow">Analytics &amp; progress</span>
+            <h3>See each student's progress at a glance</h3>
+            <p>Quiz results turn into a clear picture of who's mastering the material and who's falling behind — with a built-in machine-learning model that predicts who's at risk of failing their next quiz. It all runs offline on the teacher's laptop.</p>
+            <ul>
+              <li>Per-student mastery and topic breakdown</li>
+              <li>At-risk predictor with the reasons behind each flag</li>
+              <li>Item analysis to spot confusing questions</li>
+            </ul>
+          </div>
+          <div class="frame">
+            <div class="frame-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">rclasstra.local/classes · Analytics</span></div>
+            <img src="assets/shots/light-teacher-analytics.png" data-light="assets/shots/light-teacher-analytics.png" data-dark="assets/shots/teacher-analytics.png" alt="Analytics: student knowledge breakdown and at-risk predictor" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Row 6 — Attendance with face + signature -->
+        <div class="row reverse reveal">
+          <div class="row-text">
+            <span class="eyebrow">Attendance</span>
+            <h3>Students check in by face or signature</h3>
+            <p>Start a session and students check in from their own phone — by face recognition or a signature on screen. Face matching runs on-device, fully offline. No more passing a paper sheet around the room.</p>
+            <ul>
+              <li>Face check-in or on-screen signature (your choice per class)</li>
+              <li>Live roster updates as students check in</li>
+              <li>Attendance flows straight into your records and reports</li>
+            </ul>
+          </div>
+          <div class="phone-single">
+            <div class="phone"><img src="assets/shots/mobile-student-checkin-light.png" data-light="assets/shots/mobile-student-checkin-light.png" data-dark="assets/shots/mobile-student-checkin.png" alt="Student attendance check-in by face or signature on a phone" loading="lazy" /></div>
+          </div>
+        </div>
+
+        <!-- Row 7 — Email via your own Gmail (online) -->
+        <div class="row reveal">
+          <div class="row-text">
+            <span class="eyebrow">Works online too</span>
+            <h3>Email scores &amp; updates with your own Gmail</h3>
+            <p>When you do have internet, rClassTra can email students their scores and class updates using <strong>your own Gmail account</strong> — so it's completely free, with no subscription. Handy for releasing grades after you've left the school network or reaching students learning from home.</p>
+            <ul>
+              <li>Send with your own free Gmail — no extra service to pay for</li>
+              <li>Release quiz scores and attendance summaries by email</li>
+              <li>The app still works fully offline; email is only used when you choose</li>
+            </ul>
+          </div>
+          <div class="frame">
+            <div class="frame-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">rclasstra.local/profile · Email</span></div>
+            <img src="assets/shots/light-teacher-email.png" data-light="assets/shots/light-teacher-email.png" data-dark="assets/shots/teacher-email.png" alt="Email settings: email scores using your own free account" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXAM INTEGRITY ===================== -->
+  <section id="integrity" class="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Exam integrity</span>
+        <h2>Catches cheating — then puts the teacher in control</h2>
+        <p>During a quiz, rClassTra watches for tab-switching, leaving fullscreen, screenshots, and second monitors. Students get a warning; repeat offenders are locked out until you decide.</p>
+      </div>
+
+      <div class="integrity-grid">
+        <div class="ig-phones reveal">
+          <div class="phone"><img src="assets/shots/mobile-quiz-warning.png" alt="Student warning: you left the quiz screen" loading="lazy" /></div>
+          <div class="phone"><img src="assets/shots/mobile-quiz-lockout.png" alt="Student locked out, waiting for teacher" loading="lazy" /></div>
+        </div>
+        <div class="ig-review reveal">
+          <div class="eyebrow" style="margin-bottom:14px">Teacher decides</div>
+          <h3>Approve or deny, right from your screen</h3>
+          <p>Every flagged student lands in a review list. Give them another chance with <strong>Allow</strong>, or block the attempt with <strong>Deny</strong> — individually or in bulk.</p>
+          <div class="frame" style="margin-top:18px">
+            <div class="frame-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">rclasstra.local/classes · Violations</span></div>
+            <img src="assets/shots/teacher-violations.png" alt="Teacher violations review with Allow and Deny buttons" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LIGHT & DARK ===================== -->
+  <section id="themes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Light &amp; dark</span>
+        <h2>Pick the look that suits the room</h2>
+        <p>rClassTra ships with both a crisp light theme and an easy-on-the-eyes dark theme — switch anytime with one tap.</p>
+      </div>
+      <div class="theme-pair">
+        <div class="theme-card reveal">
+          <div class="frame">
+            <div class="frame-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">Light theme</span></div>
+            <img src="assets/shots/light-teacher-dashboard.png" alt="rClassTra teacher dashboard in light theme" loading="lazy" />
+          </div>
+          <p class="theme-cap">☀️ Light theme</p>
+        </div>
+        <div class="theme-card reveal">
+          <div class="frame">
+            <div class="frame-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">Dark theme</span></div>
+            <img src="assets/shots/teacher-dashboard.png" alt="rClassTra teacher dashboard in dark theme" loading="lazy" />
+          </div>
+          <p class="theme-cap">🌙 Dark theme</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section id="how" class="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>The teacher's laptop is the whole server</h2>
+        <p>No data center, no subscriptions, no cloud. Just one machine and the classroom WiFi.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="num">1</div><h3>Start on the teacher laptop</h3><p>Launch rClassTra. It becomes the classroom server and shows one simple link to share.</p></div>
+        <div class="step reveal"><div class="num">2</div><h3>Students join over WiFi</h3><p>Everyone opens the link (or scans a QR) on their own device — phone, tablet, or laptop.</p></div>
+        <div class="step reveal"><div class="num">3</div><h3>Teach, test, and track</h3><p>Present, run quizzes, take attendance, and review analytics — all in real time, fully offline.</p></div>
+      </div>
+      <div class="topology reveal">
+        <img src="assets/img/network-topology.svg" alt="Classroom network topology: teacher laptop as server, WiFi router, and student devices, fully offline" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEVICES ===================== -->
+  <section id="devices">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Every device welcome</span>
+        <h2>Looks right on the big screen and in a hand</h2>
+        <p>The same clean interface scales from a teacher's laptop to a student's phone — no separate "mobile site," just one responsive app.</p>
+      </div>
+
+      <div class="mobile-pair reveal" style="margin-bottom:46px">
+        <div class="phone"><img src="assets/shots/mobile-login.png" alt="rClassTra login screen on a phone" loading="lazy" /></div>
+        <div class="phone"><img src="assets/shots/mobile-student-dashboard.png" alt="rClassTra student dashboard on a phone" loading="lazy" /></div>
+        <div class="phone"><img src="assets/shots/mobile-teacher.png" alt="rClassTra teacher dashboard on a phone" loading="lazy" /></div>
+      </div>
+
+      <div class="platforms">
+        <div class="plat reveal"><div class="pico">💻</div><h3>Teacher desktop app</h3><p>A packaged Windows desktop app for faculty — the full classroom server in one installer.</p><span class="tag ready">Available</span></div>
+        <div class="plat reveal"><div class="pico">📱</div><h3>Student Android app</h3><p>A native Android app students install from the classroom server over the LAN — no app store, no internet.</p><span class="tag ready">Available</span></div>
+        <div class="plat reveal"><div class="pico">🌐</div><h3>Any web browser</h3><p>No install? Students and staff can join in any modern browser on the same WiFi.</p><span class="tag ready">Available</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY (for leadership) ===================== -->
+  <section id="why" class="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">For deans &amp; chairpersons</span>
+        <h2>Why adopt rClassTra?</h2>
+      </div>
+      <div class="features">
+        <div class="card reveal"><div class="ico">💸</div><h3>No recurring cost</h3><p>It runs on hardware you already own. No per-seat licenses, no subscription, no cloud bill.</p></div>
+        <div class="card reveal"><div class="ico">📶</div><h3>Thrives on weak internet</h3><p>Built for low-connectivity rooms. Classes keep running even when the campus link is down.</p></div>
+        <div class="card reveal"><div class="ico">🔒</div><h3>Data privacy by design</h3><p>Student records never leave the school's machines, which keeps you in control and simplifies compliance.</p></div>
+        <div class="card reveal"><div class="ico">🎓</div><h3>Faculty-friendly</h3><p>A guided first-run setup and a familiar interface mean teachers can start the same day, with minimal training.</p></div>
+        <div class="card reveal"><div class="ico">📈</div><h3>Evidence for reviews</h3><p>Exportable reports on progress, attendance, and outcomes support program assessment and accreditation.</p></div>
+        <div class="card reveal"><div class="ico">🧩</div><h3>One platform, fewer tools</h3><p>Presentations, quizzes, attendance, and analytics in one place — less to manage, less to pay for.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section id="get-started">
+    <div class="wrap">
+      <div class="cta reveal">
+        <h2>Request an app today</h2>
+        <p>rClassTra is available to <strong>partner schools and anyone interested</strong> in using it as their learning platform — online, offline, or both. Request a copy and we'll help you get set up and running with your classes.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a href="https://forms.gle/k2a6MiBhMTw2Tgzc8" target="_blank" rel="noopener" class="btn btn-primary">📝 Request an app</a>
+          <a href="mailto:richard.estrada@example.com?subject=rClassTra%20request%20an%20app&amp;body=Hi%20Richard%2C%20I%27m%20interested%20in%20using%20rClassTra%20as%20our%20learning%20platform.%20Please%20help%20us%20get%20set%20up." class="btn btn-ghost">📧 Email us</a>
+        </div>
+        <p style="margin-top:18px;font-size:.92rem;opacity:.9">Requests go straight to our Google Form — it takes about a minute.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Common questions</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="features">
+        <div class="card reveal"><h3>Does it really work with no internet?</h3><p>Yes. The teacher's laptop is the server and everything runs over the classroom WiFi. The internet is only ever optional, for backup.</p></div>
+        <div class="card reveal"><h3>What devices do students need?</h3><p>Any phone, tablet, or laptop with a browser works — plus there's a native Android app for students and a Windows desktop app for faculty.</p></div>
+        <div class="card reveal"><h3>Where is student data stored?</h3><p>On the school's own machine. It is never uploaded to a third-party cloud, and it can be exported or moved with a single command.</p></div>
+        <div class="card reveal"><h3>How does it stop cheating?</h3><p>During exams it enforces fullscreen, flags tab-switching and second monitors, can record the camera, and locks out repeat offenders until the teacher reviews them.</p></div>
+        <div class="card reveal"><h3>Can it handle a full class?</h3><p>It's designed for rooms of 40–50 devices on a single access point — the typical classroom size.</p></div>
+        <div class="card reveal"><h3>What does it cost?</h3><p>It runs on hardware you already have, with no per-seat licensing or subscription.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="wrap foot">
+      <a class="brand" href="#top">
+        <img src="assets/img/logo.png" alt="rClassTra logo" style="width:28px;height:28px;border-radius:7px" />
+        rClassTra
+      </a>
+      <div class="fl">
+        <a href="#problems">Why</a>
+        <a href="#features">Features</a>
+        <a href="#tour">Tour</a>
+        <a href="#get-started">Request an app</a>
+      </div>
+      <p>© 2026 rClassTra · Built by Richard Estrada · A learning platform for every classroom — online &amp; offline</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

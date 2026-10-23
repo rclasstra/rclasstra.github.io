@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 730" font-family="Segoe UI, Roboto, Arial, sans-serif">
+  <defs>
+    <linearGradient id="acTitle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="acStep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8fafc"/><stop offset="1" stop-color="#eef2f6"/></linearGradient>
+    <linearGradient id="acWarn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fef2f2"/><stop offset="1" stop-color="#fee2e2"/></linearGradient>
+    <linearGradient id="acRec" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef2ff"/><stop offset="1" stop-color="#e0e7ff"/></linearGradient>
+    <linearGradient id="acDec" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fefce8"/><stop offset="1" stop-color="#fef9c3"/></linearGradient>
+    <linearGradient id="acOut" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ecfdf5"/><stop offset="1" stop-color="#d1fae5"/></linearGradient>
+    <filter id="acSh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#0f172a" flood-opacity="0.12"/></filter>
+    <marker id="acA" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .lbl{fill:#0f172a;font-weight:700;font-size:13.5px}
+      .sub{fill:#475569;font-size:11px}
+      .tag{fill:#334155;font-size:11px;font-weight:700}
+      .link{stroke:#334155;stroke-width:2;fill:none}
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="730" fill="#ffffff"/>
+  <rect x="8" y="8" width="884" height="48" rx="12" fill="url(#acTitle)"/>
+  <text x="450" y="39" text-anchor="middle" fill="#ffffff" font-weight="700" font-size="20">Anti-Cheating (Proctoring) Flow — teacher in the loop</text>
+
+  <rect x="300" y="72" width="300" height="58" rx="10" fill="url(#acStep)" stroke="#94a3b8" stroke-width="1.5" filter="url(#acSh)"/>
+  <text x="450" y="96" text-anchor="middle" class="lbl">▶ Student starts quiz</text>
+  <text x="450" y="115" text-anchor="middle" class="sub">load settings: max violations · shuffle · camera? · attendance-gated?</text>
+  <line x1="450" y1="130" x2="450" y2="152" class="link" marker-end="url(#acA)"/>
+
+  <rect x="265" y="152" width="370" height="54" rx="10" fill="url(#acStep)" stroke="#94a3b8" stroke-width="1.5" filter="url(#acSh)"/>
+  <text x="450" y="176" text-anchor="middle" class="lbl">🖥 Quiz in progress — monitoring active</text>
+  <text x="450" y="194" text-anchor="middle" class="sub">fullscreen enforce · tab/blur watch · 2nd-monitor detect · screenshot deterrent</text>
+
+  <rect x="670" y="150" width="210" height="66" rx="10" fill="url(#acRec)" stroke="#6366f1" stroke-width="1.6" filter="url(#acSh)"/>
+  <text x="775" y="174" text-anchor="middle" class="lbl">🎥 Camera recording</text>
+  <text x="775" y="192" text-anchor="middle" class="sub">MediaRecorder, if enabled</text>
+  <text x="775" y="208" text-anchor="middle" class="sub">(HTTPS secure context)</text>
+  <line x1="635" y1="180" x2="670" y2="180" class="link" marker-end="url(#acA)"/>
+
+  <line x1="450" y1="206" x2="450" y2="230" class="link" marker-end="url(#acA)"/>
+  <text x="462" y="223" class="tag" fill="#b91c1c">tab switch / window blur detected</text>
+
+  <rect x="300" y="230" width="300" height="54" rx="10" fill="url(#acWarn)" stroke="#dc2626" stroke-width="1.6" filter="url(#acSh)"/>
+  <text x="450" y="254" text-anchor="middle" class="lbl">⚠ Increment violation + warning overlay</text>
+  <text x="450" y="272" text-anchor="middle" class="sub">Print Screen also logged as an audit signal</text>
+  <line x1="450" y1="284" x2="450" y2="306" class="link" marker-end="url(#acA)"/>
+
+  <polygon points="450,306 600,353 450,400 300,353" fill="url(#acDec)" stroke="#ca8a04" stroke-width="1.6" filter="url(#acSh)"/>
+  <text x="450" y="349" text-anchor="middle" class="lbl">violations ≥ max?</text>
+  <text x="450" y="367" text-anchor="middle" class="sub">(0 = unlimited)</text>
+
+  <line x1="600" y1="353" x2="705" y2="353" class="link" marker-end="url(#acA)"/>
+  <text x="628" y="344" class="tag" fill="#047857">No</text>
+  <rect x="705" y="326" width="175" height="54" rx="10" fill="url(#acStep)" stroke="#94a3b8" stroke-width="1.5" filter="url(#acSh)"/>
+  <text x="792" y="350" text-anchor="middle" class="lbl">Continue</text>
+  <text x="792" y="368" text-anchor="middle" class="sub">warning stays visible</text>
+  <path d="M792,326 C792,240 660,205 636,192" class="link" marker-end="url(#acA)"/>
+
+  <line x1="450" y1="400" x2="450" y2="424" class="link" marker-end="url(#acA)"/>
+  <text x="464" y="417" class="tag" fill="#b91c1c">Yes</text>
+  <rect x="300" y="424" width="300" height="58" rx="10" fill="url(#acWarn)" stroke="#dc2626" stroke-width="1.6" filter="url(#acSh)"/>
+  <text x="450" y="448" text-anchor="middle" class="lbl">⛔ Auto-stop &amp; block student</text>
+  <text x="450" y="467" text-anchor="middle" class="sub">progress auto-saved · teacher notified in real time</text>
+  <line x1="450" y1="482" x2="450" y2="506" class="link" marker-end="url(#acA)"/>
+
+  <rect x="265" y="506" width="370" height="74" rx="10" fill="url(#acDec)" stroke="#ca8a04" stroke-width="1.6" filter="url(#acSh)"/>
+  <text x="450" y="530" text-anchor="middle" class="lbl">🧑‍🏫 Teacher decision (human in the loop)</text>
+  <text x="450" y="549" text-anchor="middle" class="sub">Allow to continue · Deny (permanent) · Review video</text>
+  <text x="450" y="566" text-anchor="middle" class="sub">bulk allow / deny / reopen supported</text>
+  <line x1="450" y1="580" x2="450" y2="604" class="link" marker-end="url(#acA)"/>
+
+  <rect x="300" y="604" width="300" height="66" rx="10" fill="url(#acOut)" stroke="#10b981" stroke-width="1.6" filter="url(#acSh)"/>
+  <text x="450" y="628" text-anchor="middle" class="lbl">✔ Outcome recorded</text>
+  <text x="450" y="647" text-anchor="middle" class="sub">student polls status (released / denied)</text>
+  <text x="450" y="663" text-anchor="middle" class="sub">video saved locally for later review</text>
+</svg>

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f4f6fb"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5b3df6"/><stop offset="1" stop-color="#7f5bff"/>
+    </linearGradient>
+    <linearGradient id="server" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef0ff"/><stop offset="1" stop-color="#e0e4ff"/>
+    </linearGradient>
+    <linearGradient id="router" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8fbff"/><stop offset="1" stop-color="#d2f4fb"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1b2559" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#16a34a"/>
+    </marker>
+    <style>
+      .lbl{fill:#1b2559;font-weight:700;font-size:15px}
+      .sub{fill:#5b6b8c;font-size:12px}
+      .mut{fill:#8294b5;font-size:11px}
+      .lan{stroke:#64748b;stroke-width:2.4;fill:none}
+      .p2p{stroke:#16a34a;stroke-width:2.2;stroke-dasharray:8 6;fill:none}
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="620" fill="url(#bg)"/>
+
+  <!-- title bar -->
+  <rect x="24" y="22" width="952" height="52" rx="14" fill="url(#title)"/>
+  <text x="48" y="55" fill="#ffffff" font-size="20" font-weight="800">Classroom network — one laptop, your own WiFi, no internet</text>
+
+  <!-- optional cloud -->
+  <g filter="url(#sh)">
+    <rect x="360" y="100" width="280" height="56" rx="14" fill="#fffbeb" stroke="#f5b301" stroke-width="1.5"/>
+  </g>
+  <text x="500" y="126" text-anchor="middle" class="lbl" fill="#8a6d00">☁  Optional internet</text>
+  <text x="500" y="145" text-anchor="middle" class="sub" fill="#8a6d00">Only for backup — never needed to run class</text>
+
+  <!-- teacher laptop = server -->
+  <g filter="url(#sh)">
+    <rect x="350" y="196" width="300" height="88" rx="16" fill="url(#server)" stroke="#6366f1" stroke-width="2"/>
+  </g>
+  <text x="500" y="226" text-anchor="middle" class="lbl">💻  Teacher laptop = server</text>
+  <text x="500" y="248" text-anchor="middle" class="sub">Runs presentations, quizzes, attendance</text>
+  <text x="500" y="267" text-anchor="middle" class="mut">All data stays here · fully offline</text>
+
+  <!-- cloud link -->
+  <line x1="500" y1="196" x2="500" y2="158" class="lan" stroke-dasharray="3 5" marker-end="url(#arrow)"/>
+
+  <!-- router -->
+  <g filter="url(#sh)">
+    <rect x="388" y="324" width="224" height="74" rx="16" fill="url(#router)" stroke="#0891b2" stroke-width="2"/>
+  </g>
+  <text x="500" y="352" text-anchor="middle" class="lbl">📶  Classroom WiFi router</text>
+  <text x="500" y="374" text-anchor="middle" class="sub">One access point covers the whole room</text>
+
+  <line x1="500" y1="284" x2="500" y2="322" class="lan" marker-end="url(#arrow)"/>
+
+  <!-- devices -->
+  <g filter="url(#sh)">
+    <rect x="70" y="462" width="190" height="96" rx="14" fill="#ffffff" stroke="#d6def0" stroke-width="1.5"/>
+    <rect x="300" y="462" width="190" height="96" rx="14" fill="#ffffff" stroke="#d6def0" stroke-width="1.5"/>
+    <rect x="510" y="462" width="190" height="96" rx="14" fill="#ffffff" stroke="#d6def0" stroke-width="1.5"/>
+    <rect x="740" y="462" width="190" height="96" rx="14" fill="#ffffff" stroke="#d6def0" stroke-width="1.5"/>
+  </g>
+
+  <text x="165" y="496" text-anchor="middle" class="lbl">📱 Phones</text>
+  <text x="165" y="518" text-anchor="middle" class="sub">Android / iOS browser</text>
+  <text x="165" y="537" text-anchor="middle" class="mut">no install needed</text>
+
+  <text x="395" y="496" text-anchor="middle" class="lbl">💻 Laptops</text>
+  <text x="395" y="518" text-anchor="middle" class="sub">Any modern browser</text>
+  <text x="395" y="537" text-anchor="middle" class="mut">bring your own device</text>
+
+  <text x="605" y="496" text-anchor="middle" class="lbl">📟 Tablets</text>
+  <text x="605" y="518" text-anchor="middle" class="sub">Shared or personal</text>
+  <text x="605" y="537" text-anchor="middle" class="mut">40–50 per room</text>
+
+  <text x="835" y="496" text-anchor="middle" class="lbl">🖥 Kiosk</text>
+  <text x="835" y="518" text-anchor="middle" class="sub">Attendance check-in</text>
+  <text x="835" y="537" text-anchor="middle" class="mut">walk-up face / ID</text>
+
+  <!-- router -> devices -->
+  <line x1="440" y1="398" x2="180" y2="462" class="lan" marker-end="url(#arrow)"/>
+  <line x1="475" y1="398" x2="400" y2="462" class="lan" marker-end="url(#arrow)"/>
+  <line x1="525" y1="398" x2="600" y2="462" class="lan" marker-end="url(#arrow)"/>
+  <line x1="560" y1="398" x2="820" y2="462" class="lan" marker-end="url(#arrow)"/>
+
+  <!-- legend -->
+  <rect x="24" y="580" width="952" height="24" rx="8" fill="#eef1f8"/>
+  <line x1="44" y1="592" x2="78" y2="592" class="lan"/>
+  <text x="88" y="596" class="mut">WiFi / LAN: logins, slides, quizzes, attendance, uploads</text>
+  <line x1="470" y1="592" x2="504" y2="592" class="p2p"/>
+  <text x="514" y="596" class="mut">Live screen share goes device-to-device over the same WiFi</text>
+</svg>
